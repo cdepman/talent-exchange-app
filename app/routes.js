@@ -5,7 +5,6 @@ module.exports = function(app, passport){
     res.render('index.ejs');
   });
 
-  // login form
   app.get('/login', function(req, res){
     res.render('login.ejs', { message: req.flash('loginMessage') });
   });
@@ -20,6 +19,12 @@ module.exports = function(app, passport){
     failureFlash: true
   }));
 
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/profile',
+    failureRedirect : '/login',
+    failureFlash : true
+  }));
+
   app.get('/profile', isLoggedIn, function(req, res){
     res.render('profile.ejs', {
       user: req.user
@@ -31,8 +36,22 @@ module.exports = function(app, passport){
     res.redirect('/');
   });
 
-};
+  app.get('/auth/github', passport.authenticate('github', { scope : 'email' }));
 
+  // handle the callback after github has authenticated the user
+  app.get('/auth/github/callback',
+      passport.authenticate('github', {
+          successRedirect : '/profile',
+          failureRedirect : '/'
+  }));
+
+  // route for logging out
+  app.get('/logout', function(req, res) {
+      req.logout();
+      res.redirect('/');
+  });
+
+};
 
 // log-in checker middlware
 function isLoggedIn(req, res, next){
