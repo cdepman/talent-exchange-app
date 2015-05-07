@@ -1,11 +1,25 @@
 path = require('path');
+mongoose = require('mongoose');
+Org = require('../models/orgs');
+
+
+var newOrg = new Org();
+
+newOrg.org.name    = 'Moringa School'; 
+newOrg.org.location = 'Nairobi, Kenya'; 
+newOrg.org.status  = 'Accepting Applications'; 
+newOrg.org.time  = 'Flexible'; 
+newOrg.org.exchange = 'Airfare, Room and Board';
+newOrg.org.stack = 'Ruby on Rails, Android';
+newOrg.org.email = 'Airfare, Room and Board';
+
+newOrg.save(function(err) {
+    if (err)
+        throw err;
+});
+
 
 module.exports = function(app, passport){
-
-  // main index
-  // app.get('/', function(req, res){
-  //   res.render('index.ejs');
-  // });
 
   app.get('/login', function(req, res){
     res.render('login.ejs', { message: req.flash('loginMessage') });
@@ -33,6 +47,13 @@ module.exports = function(app, passport){
 
   app.get('/privatejs/*', isLoggedIn, function(req, res){
     res.sendfile(path.resolve(path.resolve('./private/' + req.url)));
+  });
+
+  app.get('/private/orgs', isLoggedIn, function(req, res){
+    Org.find(function(err, orgs){
+      if (err){console.log(err)}
+      res.json(orgs);
+    });
   });
 
   app.get('/auth/github', passport.authenticate('github', { scope : 'email' }));

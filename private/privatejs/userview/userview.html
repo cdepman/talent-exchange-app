@@ -1,8 +1,11 @@
-<div ng-controller="UserViewCtrl">
-  <p class="tag-line">participating orgs:</p>
-  <p class="tag-line">moringa school (Kenya)</p>
-  <p class="tag-line">laboratoria (Peru)</p>
-  <p class="tag-line">world tech makers (Brazil)</p>
-  <p class="tag-line">world tech makers (Colombia)</p>
-  <p class="tag-line">world tech makers (Chile)</p>
+<div>
+<table ng-repeat="org in orgs">
+  <tr >Name: {{ org.name }}</tr>
+  <tr >Location: {{ org.location }}</tr>
+  <tr >Status: {{ org.status }}</tr>
+  <tr >Time Commitment: {{ org.time }}</tr>
+  <tr >Exchange: {{ org.exchange }}</tr>
+  <tr >Stack: {{ org.stack }}</tr>
+  <tr > --------------------------- </tr>
+</table>
 </div>
