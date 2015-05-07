@@ -31,6 +31,7 @@ app.use(passport.session());
 app.use(flash());
 
 // routes
+app.use(express.static('client'));
 require('./app/routes.js')(app, passport);
 
 // 3...2...1...launch!

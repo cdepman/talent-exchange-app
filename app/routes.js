@@ -1,17 +1,17 @@
 module.exports = function(app, passport){
 
   // main index
-  app.get('/', function(req, res){
-    res.render('index.ejs');
-  });
+  // app.get('/', function(req, res){
+  //   res.render('index.ejs');
+  // });
 
-  app.get('/login', function(req, res){
-    res.render('login.ejs', { message: req.flash('loginMessage') });
-  });
+  // app.get('/login', function(req, res){
+  //   res.render('login.ejs', { message: req.flash('loginMessage') });
+  // });
 
-  app.get('/signup', function(req, res){
-    res.render('signup.ejs', { message: req.flash('signupMessage') });
-  });
+  // app.get('/signup', function(req, res){
+  //   res.render('signup.ejs', { message: req.flash('signupMessage') });
+  // });
 
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/profile',
@@ -50,6 +50,10 @@ module.exports = function(app, passport){
       req.logout();
       res.redirect('/');
   });
+
+  // app.get('/user/*', function(req, res) {
+  //       res.sendfile('./client/index.html'); // load our public/index.html file
+  //   });
 
 };
 

@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Talent Exchange</title>
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
-</head>
-<body ng-app="myApp">
+  <head>
+    <title>Talent Exchange</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:800,400,600,200,100' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-app="myApp">
 
-  <div class="header">
-    <img class="logo" src="assets/talent-exchange-logo.svg">
-  </div>
+    <div class="header">
+      <img class="logo" src="assets/talent-exchange-logo.svg">
+    </div>
 
-  <div class="lines-top">
-    <div class="line-zero"></div>
-    <div class="line-one"></div>
-    <div class="line-two"></div>
-    <div class="line-three"></div>
-    <div class="line-four"></div>
-    <div class="line-five"></div>
-    <div class="line-six"></div>
-  </div>
+    <div class="lines-top">
+      <div class="line-zero"></div>
+      <div class="line-one"></div>
+      <div class="line-two"></div>
+      <div class="line-three"></div>
+      <div class="line-four"></div>
+      <div class="line-five"></div>
+      <div class="line-six"></div>
+    </div>
 
-  <div ui-view></div>
+    <div ui-view></div>
 
-  <div class="lines-bottom">
-    <div class="line-six"></div>
-    <div class="line-five"></div>
-    <div class="line-four"></div>
-    <div class="line-three"></div>
-    <div class="line-two"></div>
-    <div class="line-one"></div>
-    <div class="line-zero"></div>
-  </div>
-  <div class="footer">
-    Charlie Depman, 2015
-  </div>
-</body>
+    <div class="lines-bottom">
+      <div class="line-six"></div>
+      <div class="line-five"></div>
+      <div class="line-four"></div>
+      <div class="line-three"></div>
+      <div class="line-two"></div>
+      <div class="line-one"></div>
+      <div class="line-zero"></div>
+    </div>
+    
+    <div class="footer"></div>
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="js/home/home.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
