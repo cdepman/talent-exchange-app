@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(bodyParser());
 
 app.set('view engine', 'ejs');
-
+ 
 // passport
 app.use(session({ secret: 'thebestkeptsecreteveryay'}));
 app.use(passport.initialize());
@@ -31,7 +31,7 @@ app.use(passport.session());
 app.use(flash());
 
 // routes
-app.use(express.static('client'));
+app.use(express.static('public'));
 require('./app/routes.js')(app, passport);
 
 // 3...2...1...launch!

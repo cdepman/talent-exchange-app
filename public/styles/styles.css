@@ -4,6 +4,23 @@ body {
   padding: 0 auto;
   color: #0066cc;
   font-family: 'Raleway', sans-serif;
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 142px;
+  background: white;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  background: white;
 }
 
 .logo {
@@ -14,18 +31,48 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.background {
+  opacity: .45;
+  position: relative;
+  top: -170px;
+  max-height: 930px;
+}
+
+.sign-in {
+  cursor: pointer;
+  text-align: center;
+  padding: 3px;
+  border: 2px solid #0066cc;
+  border-radius: 50px;
+  position: fixed;
+  right: 10%;
+  top: 15px;
+  height: 36px;
+  width: 36px;
+}
+
+.sign-in a {
+  text-decoration: none;
+}
+
+.sign-in:hover {
+  box-shadow: inset 0 0 1px  gray, gray 0 0 1px;
+  text-shadow: 0px 0px 0px black;
+}
+
 .lines-top {
   width: 100%;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   top: 85px;
 }
 
 .lines-bottom {
   width: 100%;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   bottom: 55px;
+  z-index: 10;
 }
 
 .line-zero {
@@ -78,7 +125,7 @@ body {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }
 
@@ -87,42 +134,54 @@ body {
   font-style: italic;
   font-weight: 100;
   font-size: 2em;
-  top: 25%;
+  top: 26%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
 }
 
 .i-am {
-  top: 35%;
+  top: 40%;
   left: 50%;
   font-weight: 600;
   font-size: 3em;
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: fixed;
   text-shadow: 1px 1px 2px gray;
 }
 
 .button {
   cursor: pointer;
-  font-weight: 400;
-  font-size: 1.5em;
+  font-weight: 200;
+  font-size: 2em;
   background: transparent;
-  position: absolute;
-  border: 2px solid #0066cc;
+  position: fixed;
+  border: 1px solid #0066cc;
   border-radius: 10px;
   padding: 10px 30px;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px 1px gray;
-  box-shadow: inset 0 0 3px  gray, gray 0 0 3px;
+  box-shadow: inset 0 0 1px  gray, gray 0 0 1px;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 1px  black, black 0 0 1px;
+  text-shadow: 1px 1px 1px black;
 }
 
 .user-button {
-  top: 50%;
+  top: 56%;
   left: 50%;
 }
 
 .org-button {
-  top: 57%;
+  top: 65%;
   left: 50%;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

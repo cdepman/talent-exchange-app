@@ -5,7 +5,7 @@ var app = angular.module('myApp', [
 
 app.config(function($stateProvider, $urlRouterProvider) {
   
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
     .state('home', {
@@ -14,4 +14,3 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'HomeCtrl'
     })
 });
-
