@@ -2,9 +2,12 @@
 <input type="search" ng-model="q" placeholder="filter orgs..."/>
 <ul class="animate-container">
   <li class="animate-repeat" ng-repeat="org in orgs | filter:q as results">
-    name: {{ org.org.name }} <br>
-    location: {{ org.org.location }} <br>
-    status: {{ org.org.status }} <br><br>
+    <strong>name:</strong> {{ org.org.name }} <br>
+    <strong>location:</strong> {{ org.org.location }} <br>
+    <strong>time commitment:</strong> {{ org.org.location }} <br>
+    <strong>exchange:</strong> {{ org.org.location }} <br>
+    <strong>stack:</strong> {{ org.org.location }} <br>
+    <strong>status:</strong> {{ org.org.status }} <br><br>
   </li>
   <li class="animate-repeat" ng-if="results.length == 0">
         <strong>no orgs found...</strong>

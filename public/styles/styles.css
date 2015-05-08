@@ -222,9 +222,13 @@ body {
 
 .results {
   position: fixed;
-  height: 400px;
-  top: 40%;
-  left: 50%;
   overflow: scroll;
+  height: 60%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+}
+
+input[type="search"] {
+  font-size:30px;
 }
