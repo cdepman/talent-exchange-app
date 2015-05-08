@@ -1,11 +1,19 @@
-<div>
-<table ng-repeat="org in orgs">
-  <tr >Name: {{ org.name }}</tr>
-  <tr >Location: {{ org.location }}</tr>
-  <tr >Status: {{ org.status }}</tr>
-  <tr >Time Commitment: {{ org.time }}</tr>
+<div class="results">
+<input type="search" ng-model="q" placeholder="filter orgs..."/>
+<ul class="animate-container">
+  <li class="animate-repeat" ng-repeat="org in orgs | filter:q as results">
+    name: {{ org.org.name }} <br>
+    location: {{ org.org.location }} <br>
+    status: {{ org.org.status }} <br><br>
+  </li>
+  <li class="animate-repeat" ng-if="results.length == 0">
+        <strong>no orgs found...</strong>
+      </li>
+</ul>
+
+
+<!--   <tr >Time Commitment: {{ org.time }}</tr>
   <tr >Exchange: {{ org.exchange }}</tr>
   <tr >Stack: {{ org.stack }}</tr>
-  <tr > --------------------------- </tr>
-</table>
+  <tr > --------------------------- </tr> -->
 </div>

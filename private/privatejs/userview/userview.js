@@ -1,12 +1,19 @@
 angular.module('myApp.UserViewCtrl', [])
-.controller('UserViewCtrl', ['$scope', '$state', '$http', function($scope, $state, $http, OrgService) {
+.controller('UserViewCtrl', ['$scope', '$state', '$http', function($scope, $state, $http) {
 
   $scope.orgs = [];
 
-  OrgService.getOrgs(function(data){
-    $scope.orgs = data;
-    $scope.$apply();
-  });
+  var getOrgs = function () {
+    $http.get('/private/orgs').
+    success(function(data, status, headers, config) {
+      $scope.orgs = data;
+      console.log($scope.orgs);
+    }).
+    error(function(data, status, headers, config) {
+      console.log(status);
+    });
+  }
 
+  getOrgs();
 
 }]);

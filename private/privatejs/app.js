@@ -1,6 +1,5 @@
 var app = angular.module('myApp', [
   'myApp.UserViewCtrl',
-  'myApp.OrgService',
   'ui.router'
 ]);
 

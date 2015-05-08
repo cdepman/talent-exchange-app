@@ -3,20 +3,20 @@ mongoose = require('mongoose');
 Org = require('../models/orgs');
 
 
-var newOrg = new Org();
+// var newOrg = new Org();
 
-newOrg.org.name    = 'Moringa School'; 
-newOrg.org.location = 'Nairobi, Kenya'; 
-newOrg.org.status  = 'Accepting Applications'; 
-newOrg.org.time  = 'Flexible'; 
-newOrg.org.exchange = 'Airfare, Room and Board';
-newOrg.org.stack = 'Ruby on Rails, Android';
-newOrg.org.email = 'Airfare, Room and Board';
+// newOrg.org.name    = 'Moringa School'; 
+// newOrg.org.location = 'Nairobi, Kenya'; 
+// newOrg.org.status  = 'Accepting Applications'; 
+// newOrg.org.time  = 'Flexible'; 
+// newOrg.org.exchange = 'Airfare, Room and Board';
+// newOrg.org.stack = 'Ruby on Rails, Android';
+// newOrg.org.email = 'Airfare, Room and Board';
 
-newOrg.save(function(err) {
-    if (err)
-        throw err;
-});
+// newOrg.save(function(err) {
+//     if (err)
+//         throw err;
+// });
 
 
 module.exports = function(app, passport){
