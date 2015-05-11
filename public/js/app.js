@@ -14,3 +14,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'HomeCtrl'
     })
 });
+
+
+$('.sign-in').on('click', function(){
+  window.location = "/login";
+});
