@@ -1,22 +1,16 @@
+<input class="org-search" type="search" ng-model="q" placeholder="filter orgs..."/>
 <div class="results">
-<input type="search" ng-model="q" placeholder="filter orgs..."/>
-<ul class="animate-container">
-  <li class="animate-repeat" ng-repeat="org in orgs | filter:q as results">
-    <strong>name:</strong> {{ org.org.name }} <br>
-    <strong>location:</strong> {{ org.org.location }} <br>
-    <strong>time commitment:</strong> {{ org.org.location }} <br>
-    <strong>exchange:</strong> {{ org.org.location }} <br>
-    <strong>stack:</strong> {{ org.org.location }} <br>
-    <strong>status:</strong> {{ org.org.status }} <br><br>
-  </li>
-  <li class="animate-repeat" ng-if="results.length == 0">
-        <strong>no orgs found...</strong>
-      </li>
-</ul>
-
-
-<!--   <tr >Time Commitment: {{ org.time }}</tr>
-  <tr >Exchange: {{ org.exchange }}</tr>
-  <tr >Stack: {{ org.stack }}</tr>
-  <tr > --------------------------- </tr> -->
+  <ul class="animate-container">
+    <li class="animate-repeat" ng-repeat="org in orgs | filter:q as results">
+      <strong>name:</strong> {{ org.org.name }} <br>
+      <strong>location:</strong> {{ org.org.location }} <br>
+      <strong>time commitment:</strong> {{ org.org.location }} <br>
+      <strong>exchange:</strong> {{ org.org.location }} <br>
+      <strong>stack:</strong> {{ org.org.location }} <br>
+      <strong>status:</strong> {{ org.org.status }} <br><br>
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+          <strong>no orgs found...</strong>
+        </li>
+  </ul>
 </div>

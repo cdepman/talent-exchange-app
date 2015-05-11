@@ -33,8 +33,8 @@ body {
 
 .background {
   opacity: .45;
-  position: relative;
-  top: -170px;
+  position: fixed;
+  top: -185px;
   max-height: 930px;
 }
 
@@ -224,7 +224,14 @@ body {
   position: fixed;
   overflow: scroll;
   height: 60%;
-  top: 50%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.org-search {
+  position: fixed;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
